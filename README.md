@@ -3,7 +3,9 @@
 在shell里看nba文字直播
 
 [requirements]
-安装相关包依赖
+
+安装相关包依赖,基于python2.7
+
 pip install requirement.txt
 
 
