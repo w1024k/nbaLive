@@ -14,10 +14,10 @@ WS_HEADERS = {
 SCORE_URL = "http://lives.sina.cn/"
 
 # 直播签名
-VERIFY_URL = "http://rapid.sports.sina.com.cn/home/api/room/socketverify"
+VERIFY_URL = "http://rapid.sports.sina.com.cn/home/api/room/socketverify/"
 
 # 直播
 LIVE_WS = "ws://ably.sports.sina.com.cn/"
 
 # 获取roomnum
-ROOMNUM_URL = "http://rapid.sports.sina.cn/live/api/live/room"
+ROOMNUM_URL = "http://rapid.sports.sina.cn/live/api/live/room/"

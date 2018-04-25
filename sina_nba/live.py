@@ -4,9 +4,10 @@ import settings
 
 
 class Live(object):
-    def __init__(self, match_id, title=""):
-        self.roomnum = self.get_roomnum(match_id)
-        self.title = title
+    def __init__(self, match_id):
+        params = dict(match_id=match_id)
+        self.roomnum = requests.get(url=settings.ROOMNUM_URL, params=params).json()['result']['data']['room_num']
+        self.title = requests.get(url=settings.ROOMNUM_URL, params=params).json()['result']['data']['name']
 
     def on_message(self, ws, message):
         rsp = json.loads(message)
@@ -46,12 +47,3 @@ class Live(object):
         )
         print self.title
         ws.run_forever()
-
-    def get_roomnum(self, match_id):
-        params = {
-            "match_id": match_id,
-        }
-        room_num = requests.get(url=settings.ROOMNUM_URL, params=params).json()['result']['data']['room_num']
-        self.title = requests.get(url=settings.ROOMNUM_URL, params=params).json()['result']['data']['name']
-        print self.title
-        return room_num
