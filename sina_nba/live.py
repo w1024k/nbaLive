@@ -13,7 +13,7 @@ class Live(object):
         rsp = json.loads(message)
         detail = rsp.get("c") or rsp.get("b")
         match = detail.get("match")
-        # print detail
+        print detail
         if match:
             print "%s, %s [%s : %s]" % (self.title, match["phase"], match["score2"], match["score1"])
 

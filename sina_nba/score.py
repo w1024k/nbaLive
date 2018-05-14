@@ -33,15 +33,18 @@ class Score(object):
 
     def get_rooms(self):
         node = self.get_node()
-        live_id_list = []
-        for index, node1 in enumerate(node):
+        live_id_list = list()
+        live_desc = list()
+
+        for node1 in node:
             score = node1.xpath('.//h2[@class ="live_h2"]/a/text()')[0]
             links = node1.xpath(".//h4/a/@href")[0]
-            print index, score
 
             live_id = links.split("=")[-1]
             live_id_list.append(live_id)
-        return live_id_list
+            live_desc.append(score)
+
+        return live_id_list, live_desc
 
     def run(self, start=True):
         if start:
