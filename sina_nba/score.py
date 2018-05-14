@@ -50,7 +50,7 @@ class Score(object):
         if start:
             rate = 0
         else:
-            rate = raw_input("刷新频率(秒):")
+            rate = raw_input("刷新频率(秒,0为不刷新):")
             try:
                 rate = int(rate)
             except:
