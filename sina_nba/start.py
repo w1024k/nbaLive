@@ -19,7 +19,7 @@ def start():
 
 def main(num):
     if num == 1:
-        s.run(False)
+        s.run(start=False)
     else:
         live_id_list, live_desc = s.get_rooms()
         for index, desc in enumerate(live_desc):
@@ -39,5 +39,5 @@ def main(num):
 
 if __name__ == '__main__':
     s = Score()
-    s.run(True)
+    s.run(start=True)
     main(start())
