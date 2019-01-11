@@ -1,2 +1,5 @@
 #python
 *.pyc
+.project
+.pydevproject
+.settings/*
